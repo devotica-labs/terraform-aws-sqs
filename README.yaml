@@ -1,0 +1,50 @@
+#
+# Canonical configuration for README.md (cloudposse-style doc standard,
+# native to Devotica). Run `make readme` to regenerate the terraform-docs
+# section of README.md.
+#
+
+name: terraform-aws-sqs
+license: APACHE2
+github_repo: devotica-labs/terraform-aws-sqs
+
+badges:
+  - name: CI
+    image: https://github.com/devotica-labs/terraform-aws-sqs/actions/workflows/ci.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-sqs/actions/workflows/ci.yml
+  - name: Release
+    image: https://github.com/devotica-labs/terraform-aws-sqs/actions/workflows/release.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-sqs/actions/workflows/release.yml
+  - name: License
+    image: https://img.shields.io/badge/License-Apache_2.0-blue.svg
+    url: LICENSE
+
+related:
+  - name: terraform-aws-kms
+    description: Customer-managed KMS key to pass as kms_master_key_id for SSE-KMS.
+    url: https://github.com/devotica-labs/terraform-aws-kms
+  - name: terraform-aws-ecs-fargate
+    description: Workload producers/consumers whose roles go in policy_principals.
+    url: https://github.com/devotica-labs/terraform-aws-ecs-fargate
+
+description: |-
+  Terraform module for an **AWS SQS** queue — standard or FIFO — with
+  server-side encryption always on (SQS-managed SSE by default, SSE-KMS when a
+  key is supplied) and an optional dead-letter queue wired via a redrive
+  policy. TLS is enforced through the queue policy whenever access is granted.
+
+introduction: |-
+  This module creates an [AWS SQS queue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)
+  with fintech-safe defaults: encryption is always enabled, an optional
+  dead-letter queue captures messages that exceed a redrive threshold, and any
+  attached access policy denies requests made without TLS. It supports both
+  standard and FIFO queues and exposes focused inputs for the settings that
+  matter — visibility timeout, retention, delivery delay, encryption mode, DLQ
+  threshold, and principal access.
+
+usage: |-
+  See [`examples/complete`](examples/complete) for the full surface (FIFO +
+  SSE-KMS + access policy) and [`examples/basic`](examples/basic) for a standard
+  queue with a dead-letter queue.
+
+contributors: []
