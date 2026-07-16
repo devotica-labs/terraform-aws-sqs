@@ -8,6 +8,19 @@ Releases are cut automatically by `release-please` on merge to `main`,
 driven by Conventional Commit prefixes (`feat:` → minor, `fix:`/`docs:`/`chore:` → patch,
 `feat!:`/`BREAKING CHANGE:` → major).
 
+## 0.1.0 (2026-07-16)
+
+
+### Features
+
+* **ci:** add architecture-diagram workflow + renderer ([65743c1](https://github.com/devotica-labs/terraform-aws-sqs/commit/65743c1b938f5b60aa5e500845a9616c429eb9e5))
+* initial release of terraform-aws-sqs ([8022cdb](https://github.com/devotica-labs/terraform-aws-sqs/commit/8022cdbabe2d7f75f3c74b190e9bd5e9e219ba6e))
+
+
+### Bug Fixes
+
+* **ci:** drop dead pip/scripts dependabot entry; tflint clean ([314432e](https://github.com/devotica-labs/terraform-aws-sqs/commit/314432ed200726dd27265db031a91397934897fe))
+
 ## [Unreleased]
 
 ### Added
